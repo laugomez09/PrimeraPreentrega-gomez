@@ -1,6 +1,8 @@
 import Brand from "./Brand";
 import ItemListContainer from "./ItemsListContainer";
-import CartWidget from "./CartWidget";
+import CartCompleto from "./CartCompleto";
+import { Modal } from "./modal";
+
 
 const NavBar = () => {
     return (
@@ -22,8 +24,12 @@ const NavBar = () => {
                     </div>
 
                     <div className="containerCart">
-                        <CartWidget/>
+                        <CartCompleto/>
 
+
+                    </div>
+                    <div className="ContainerModal">
+                        <Modal/>
 
                     </div>
                 </div>
