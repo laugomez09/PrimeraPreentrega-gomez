@@ -40,7 +40,7 @@ const Descrip = () => {
                                         />
                                     </div>
                                 </div>
-                                <div>
+                                <div className="CajaDeDescrip">
                                     <AddCantCart
                                         cant={5}
                                     />

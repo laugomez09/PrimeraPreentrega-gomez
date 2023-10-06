@@ -1,8 +1,9 @@
+import "../components-card/card.css"
+
 const BotonAdicional = (props) => {
     return (
         <button
-            id="detalles"
-            style={{ width: "180%" }}
+            id="target"
         >{props.txt}</button>
     )
 }

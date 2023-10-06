@@ -14,7 +14,6 @@ const CardItem = (props) => {
             />
             <CardDescription
                 titulo={props.titulo}
-                description={props.description}
                 cantidad={props.cantidad}
                 precio={props.precio}
             />

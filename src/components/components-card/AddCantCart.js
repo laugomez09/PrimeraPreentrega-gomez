@@ -1,7 +1,7 @@
 const AddCantCart = (props) => {
     return(
         <div className="addCantCart">
-            <span>Quiero:</span>
+            <h5>QUIERO:</h5>
             <div>
                 <button id="quitar">-</button>
                 <span className="cantTxt"> {props.cant} unidades</span>

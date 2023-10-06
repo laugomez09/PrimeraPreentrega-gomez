@@ -6,7 +6,8 @@
   grid-column: auto;
   grid-area:  2,2;*/
 }
-.card:hover{
+
+.card:hover {
   transform: scale(1.2)
 }
 
@@ -16,11 +17,12 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
-  transform:scale(0.7)
+  transform: scale(0.7)
 }
 
 .botones {
   display: flex;
+
   align-content: space-between;
 }
 
@@ -38,8 +40,31 @@
   border: none;
 }
 
-.cardcontainer{
-  display:flex;
+.CajaDeDescrip{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-evenly;
+}
+
+.detailsItem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#target {
+  
+  height: 50px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: rgb(55, 0, 182);
+  color: white;
+}
+
+.cardcontainer {
+  display: flex;
   flex-wrap: wrap;
   padding: 2%;
   gap: 15px;
@@ -50,7 +75,22 @@
   grid-column: 1;*/
 }
 
-#CartaDescrip{
+#CartaDescrip {
   display: flex;
   justify-content: center;
+  align-content: center;
+  height: 300px;
+  width: 500px;
+}
+
+#quitar{
+  background-color: rgb(55, 0, 182);
+  width: 50px;
+  color: white;
+}
+
+#aumentar{
+  background-color: rgb(55, 0, 182);
+  width: 50px;
+  color: white;
 }

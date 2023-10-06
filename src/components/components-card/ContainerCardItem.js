@@ -7,17 +7,17 @@ import { useParams } from "react-router-dom";
 
 const ContainerCardItem = () => {
     const [datos, setDatos] = useState([]);
-    const { idCategory } = useParams();
+    const {idCategory} = useParams();
 
     useEffect(() => {
-        if (idCategory == undefined) {
-            FetchSimulation(productos, 0)
-                .then(resp => setDatos(resp))
-                .catch(error => console.log(error))
-        } else {
-            FetchSimulation(productos.filter(filter => filter.type == idCategory))
-                .then(resp => setDatos(resp))
-                .catch(error => console.log(error))
+        if(idCategory == undefined ){
+        FetchSimulation(productos, 0)
+            .then(resp => setDatos(resp))
+            .catch(error => console.log(error))
+        }else{
+            FetchSimulation(productos.filter(filter => filter.type == idCategory ))
+            .then(resp => setDatos(resp))
+            .catch(error => console.log(error))
         }
     }, [idCategory])
 
@@ -31,6 +31,7 @@ const ContainerCardItem = () => {
                         id={product.id}
                         image={product.image}
                         titulo={product.titulo}
+                        description={product.description}
                         cantidad={product.cantidad}
                         precio={product.precio}
                     />
