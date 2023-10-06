@@ -1,0 +1,56 @@
+.card {
+  width: 300px;
+  height: auto;
+  display: flex;
+  /*grid-row: auto ;
+  grid-column: auto;
+  grid-area:  2,2;*/
+}
+.card:hover{
+  transform: scale(1.2)
+}
+
+.card-img-top {
+  height: 190px;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transform:scale(0.7)
+}
+
+.botones {
+  display: flex;
+  align-content: space-between;
+}
+
+#detalles {
+  border-radius: 50%;
+  margin: 20px;
+  background-color: rgb(55, 0, 182);
+  border: none;
+}
+
+#agregar {
+  border-radius: 50%;
+  margin: 20px;
+  background-color: rgb(55, 0, 182);
+  border: none;
+}
+
+.cardcontainer{
+  display:flex;
+  flex-wrap: wrap;
+  padding: 2%;
+  gap: 15px;
+  justify-content: center;
+  /*grid-template-columns: auto,auto,auto;
+  grid-template-rows: auto, auto , auto;
+  grid-row: 1 ;
+  grid-column: 1;*/
+}
+
+#CartaDescrip{
+  display: flex;
+  justify-content: center;
+}

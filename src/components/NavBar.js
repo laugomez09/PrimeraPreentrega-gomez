@@ -1,14 +1,15 @@
 import Brand from "./Brand";
 import ItemListContainer from "./ItemsListContainer";
-import CartCompleto from "./CartCompleto";
+import CartWidget from "./CartWidget";
 import { Modal } from "./modal";
+import "../components/nav.css"
 
 
 const NavBar = () => {
     return (
         <header>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                <div className="container-fluid">
+            <nav  className="navbar navbar-expand-lg bg-body-tertiary">
+                <div id="nav" className="container-fluid">
                     <div className="containerBrand">
                         <Brand />
 
@@ -24,7 +25,7 @@ const NavBar = () => {
                     </div>
 
                     <div className="containerCart">
-                        <CartCompleto/>
+                        <CartWidget/>
 
 
                     </div>
