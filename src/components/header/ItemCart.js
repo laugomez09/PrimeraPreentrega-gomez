@@ -1,7 +1,7 @@
-import "../../styles/itemCart.css"
-import { useContext } from "react"
-import { listCartContext } from "../components item/providerContextoListCart"
-
+import "../../styles/itemCart.css";
+import deleteWhite from "../../img/deleteWhite.svg";
+import { useContext } from "react";
+import { listCartContext } from "../components-card/providerContextCart";
 
 
 const ItemCart = ({ id, title, image, price, quantity }) => {
@@ -12,7 +12,7 @@ const ItemCart = ({ id, title, image, price, quantity }) => {
         <div className="itemCart">
 
             <div className="img">
-                <img src={image}></img>
+                <img src={image} alt=""/>
             </div>
 
             <div className="description-cantidad">
@@ -26,7 +26,7 @@ const ItemCart = ({ id, title, image, price, quantity }) => {
             </div>
 
             <button className="delete" onClick={() => removeFromCart(id)}>
-                <img src="http://www.w3.org/2000/svg"></img>
+                <img src={deleteWhite} alt=""/>
             </button>
         </div>
     )

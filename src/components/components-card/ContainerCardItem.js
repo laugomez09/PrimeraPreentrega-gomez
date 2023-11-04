@@ -1,44 +1,49 @@
-import CardItem from "./CardItem"
-import FetchSimulation from "./FetchSimulation";
+// import CardItem from "./CardItem";
+import fetchSimultion from "../../utils/fetchSimulation";
+import productos from "../../utils/productos";
 import { useState, useEffect } from "react";
-import productos from "./utils/productos";
-import "../components-card/card.css"
+import CardItem from "./CardItem";
+import "../../styles/containerCardsItems.css"
 import { useParams } from "react-router-dom";
+import MoonLoader from "react-spinners/ClipLoader";
 
-const ContainerCardItem = () => {
+const ContainerCardItems = () => {
     const [datos, setDatos] = useState([]);
-    const {idCategory} = useParams();
+    let { idCategory } = useParams()
 
     useEffect(() => {
-        if(idCategory == undefined ){
-        FetchSimulation(productos, 0)
-            .then(resp => setDatos(resp))
-            .catch(error => console.log(error))
-        }else{
-            FetchSimulation(productos.filter(filter => filter.type == idCategory ))
-            .then(resp => setDatos(resp))
-            .catch(error => console.log(error))
+
+        setDatos([]);
+
+        if (idCategory === undefined) {
+            fetchSimultion(productos, 1000)
+                .then(resp => setDatos(resp))
+                .catch(error => console.log(error))
+        } else {
+            fetchSimultion(productos.filter(filter => filter.type === idCategory), 2000)
+                .then(resp => setDatos(resp))
+                .catch(error => console.log(error))
         }
+
     }, [idCategory])
 
-
     return (
-        <div className="cardcontainer">
+        <div className="containerCardItems">
             {
-                datos.map(product => (
-                    <CardItem
-                        key={product.id}
-                        id={product.id}
-                        image={product.image}
-                        titulo={product.titulo}
-                        description={product.description}
-                        cantidad={product.cantidad}
-                        precio={product.precio}
-                    />
-                ))
+                (datos.length === 0) ? <div className="containerSpinner"> <MoonLoader color="#328a00ef" /> </div>
+                    : datos.map(product => (
+                        <CardItem
+                            key={product.id}
+                            id={product.id}
+                            imagen={product.imageProduct.firtsImage}
+                            title={product.title}
+                            cantidad={product.stock}
+                            precio={product.price}
+                        />
+                    ))
             }
         </div>
     )
 }
 
-export default ContainerCardItem;
+export default ContainerCardItems;

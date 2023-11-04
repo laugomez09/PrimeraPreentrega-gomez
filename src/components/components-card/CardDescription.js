@@ -4,7 +4,7 @@ const CardDescription = (props) => {
     return (
         <div className="card-body">
             <h3 className="card-title">{props.titulo}</h3>
-            <p /*className="card-text"*/>{props.decription}</p>
+            <p >{props.decription}</p>
             <p>Cantidad: {props.cantidad}</p>
             <h4>${props.precio}</h4>
         </div>

@@ -1,8 +1,9 @@
-import "../components-card/card.css"
-
-const ButtonDetalles = () => {
-    return (
-        <button href="#" id= "detalles" className="btn btn-primary">Ver más detalles</button>
+const ButtonDetalles = (props) => {
+    return(
+        <button 
+            id="detalles" 
+            /*style={{ width: "180%"}}*/
+        >{props.txt}</button>
     )
 }
 

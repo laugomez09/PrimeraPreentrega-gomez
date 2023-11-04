@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { createContext } from "react";
-import productos from "./utils/productos"
+import productos from "../../utils/productos";
 
 export const listCartContext = createContext(null);
 
@@ -20,7 +20,7 @@ const ProviderContextoListCart = ({ children }) => {
             if (product.id === id) {
                 let quantity = product.quantity;
 
-                if (quantity < producAdd.cantidad) {
+                if (quantity < producAdd.stock) {
                     const newQuantity = { ...product, quantity: quantity + 1 }
                     setListCart([...productsToMaintain, newQuantity])
                 }
@@ -49,4 +49,4 @@ const ProviderContextoListCart = ({ children }) => {
     );
 }
 
-export default ProviderContextoListCart;
+export default ProviderContextoListCart

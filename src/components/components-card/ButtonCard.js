@@ -1,6 +1,6 @@
 import "../components-card/card.css"
 import { useContext } from "react";
-import {listCartContext}  from "./ProviderContextCart"
+import {listCartContext}  from "./providerContextCart"
 
 
 const ButtonCard = ({id}) => {
