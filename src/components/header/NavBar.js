@@ -3,7 +3,6 @@ import ItemListContainer from "./ItemsListContainer";
 import CartWidget from "./CartWidget";
 import ContainerCart from "./ContainerCart";
 import ContextCart from "./ContextCart";
-import { Modal } from "./modal";
 import "../../styles/nav.css"
 
 const NavBar = () => {
@@ -23,21 +22,17 @@ const NavBar = () => {
                                     ItemUno="Mates"
                                     ItemDos="Termos"
                                     ItemTres="Bombillas"
-                                />
+                                    />
                             </nav>
 
                             <div className="containerCart">
                                 <CartWidget />
                             </div>
-                            <div className="ContainerModal">
-                                <Modal />
 
-                            </div>
-
-                            <ContainerCart />
                         </div>
                     </div>
                 </nav>
+                <ContainerCart />
             </header>
         </ContextCart>
     )

@@ -1,5 +1,5 @@
 const Description = (props) => {
-    return(
+    return (
         <div className="cardDescription">
             <h3 className="title">
                 {props.title}

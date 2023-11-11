@@ -1,5 +1,5 @@
-import CardImage from "./CardImage";
 import "../../styles/cardItem.css"
+import CardImage from "./CardImage";
 import Description from "./Description";
 import ButtonDetalles from "./Buttondetalles";
 import ButttonAddCart from "./ButtonAddCart";
@@ -11,10 +11,12 @@ const CardItem = (props) => {
         <div className="cardItem">
             <CardImage
                 imagen={props.imagen}
+                alt={props.alt}
             />
             <Description
                 title={props.title}
                 cantidad={props.cantidad}
+                descripcion={props.parrafo}
                 precio={props.precio}
             />
             <div className="buttons">

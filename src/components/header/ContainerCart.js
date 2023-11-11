@@ -5,6 +5,8 @@ import clear from "../../img/clear.svg";
 import { useContext } from "react";
 import { controllerShowCart } from "./ContextCart";
 import { listCartContext } from "../components-card/providerContextCart";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const ContainerCart = () => {
 
@@ -15,9 +17,34 @@ const ContainerCart = () => {
         display: cartShow
     }
 
+    const handleVaciar = () => {
+        const Toast = Swal.mixin({
+            toast: true,
+            background: '#328a00ef',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: false,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+
+        Toast.fire({
+            icon: 'success',
+            title: 'Has vaciado tu carrito'
+        })
+        clearCart();
+    }
+
     const closeCart = () => {
         setCartShow((cartShow === "none") ? "flex" : "none")
+
     }
+
+    const calculateTotalPrice = () => {
+        return listCart.reduce((total, product) => total + product.price, 0);
+    };
 
     return (
 
@@ -44,13 +71,17 @@ const ContainerCart = () => {
                 }
             </div>
 
+            <div className="CajaDelPrecio">
+                <p className="preciototal">Precio total: ${calculateTotalPrice()}</p>
+            </div>
+
             <div className="TerminarCompra">
 
-                <button className="terminar" >
-                    Terminar compra
-                </button>
+                <Link to="/checkout">
+                    <button className="terminar">Ir al pago</button>
+                </Link>
 
-                <button className="clear" onClick={clearCart}>
+                <button className="clear" onClick={handleVaciar}>
                     <img src={clear}></img>
                 </button>
             </div>

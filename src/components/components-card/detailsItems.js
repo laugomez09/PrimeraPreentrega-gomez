@@ -30,13 +30,13 @@ const DetailsItems = () => {
                             <div className="containerLeft">
                                 <CardImage
                                     imagen={items.imageProduct.firtsImage}
+                                    id={items.id}
                                 />
                             </div>
 
                             <div className="containerRigth">
                                 <Description
                                     title={items.title}
-                                    parrafo={items.description}
                                     cantidad={items.stock}
                                     precio={items.price}
                                 />

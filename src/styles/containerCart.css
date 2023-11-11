@@ -73,7 +73,7 @@
 .cart .TerminarCompra .terminar{
     background-color: #328a00ef;
     height: 55px;
-    width: 88%;
+    width: auto;
     border: none;
     display: flex;
     justify-content: center;
@@ -94,3 +94,21 @@
     align-items: center;
 }
 
+.preciototal {
+    background-color: #328a00ef;
+    height: 55px;
+    width: auto;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    color: white;
+    font-size: 20px;
+}
+
+.CajaDelPrecio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
